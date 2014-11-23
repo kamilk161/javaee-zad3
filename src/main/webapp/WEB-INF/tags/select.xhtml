@@ -1,0 +1,11 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" class="form-group">
+    <label class="control-label" for="#{id}">#{labelText}</label>
+    <h:selectOneMenu
+            id="#{id}"
+            styleClass="form-control"
+            label="#{labelText}"
+            value="#{value}">
+        <ui:insert/>
+    </h:selectOneMenu>
+</div>

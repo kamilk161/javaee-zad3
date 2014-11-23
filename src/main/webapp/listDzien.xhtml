@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:bt="http://kkrampa.pl/facelets">
+<h:body>
+    <ui:composition template="base.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <h:dataTable styleClass="table table-bordered" value="#{dzienManagerBean.allDni}" var="item">
+                    <f:facet name="header">Dni</f:facet>
+                    <h:column>
+                        #{dzienManagerBean.allDni.rowIndex + 1}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Data</f:facet>
+                        <h:outputText value="#{item.data}">
+                            <f:convertDateTime pattern="dd.MM.yyyy" />
+                        </h:outputText>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Pogoda</f:facet>
+                        #{item.pogoda}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Imieniny</f:facet>
+                        #{item.imieniny}
+                    </h:column>
+
+                    <h:column>
+                        <h:commandLink styleClass="btn" value="Usuń dzień"
+                                         action="#{dzienBean.removeDzien(item)}"/>
+                        <h:link styleClass="btn" outcome="addDzien?id=#{dzienManagerBean.allDni.rowIndex}"
+                                includeViewParams="true" value="Edytuj dzień" />
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

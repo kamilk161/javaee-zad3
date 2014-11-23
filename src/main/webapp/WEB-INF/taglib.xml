@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+        "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+    <namespace>http://kkrampa.pl/facelets</namespace>
+    <tag>
+        <tag-name>bootstrapForm</tag-name>
+        <source>tags/bootstrapForm.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>formControl</tag-name>
+        <source>tags/formControl.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>select</tag-name>
+        <source>tags/select.xhtml</source>
+    </tag>
+</facelet-taglib>

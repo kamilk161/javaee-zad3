@@ -1,0 +1,13 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:h="http://java.sun.com/jsf/html">
+    <h:form styleClass="form-horizontal">
+        <ui:insert />
+        <div class="form-group">
+            <div>
+                <h:commandButton styleClass="btn" value="#{submitText}"
+                                 action="#{dzienBean.addDzien}"/>
+            </div>
+        </div>
+    </h:form>
+</div>

@@ -19,6 +19,16 @@ public class DzienManagerBean implements Serializable {
     @Inject
     private DzienManager dzienManager;
 
+    ArrayDataModel<Dzien> dniModel = null;
+
+    public ArrayDataModel<Dzien> getDniModel() {
+        return dniModel;
+    }
+
+    public void setDniModel(ArrayDataModel<Dzien> dniModel) {
+        this.dniModel = dniModel;
+    }
+
     public DzienManager getDzienManager() {
         return dzienManager;
     }
@@ -29,6 +39,6 @@ public class DzienManagerBean implements Serializable {
 
     public ArrayDataModel<Dzien> getAllDni() {
         Dzien[] dni = new Dzien[getDzienManager().getAllDni().size()];
-        return new ArrayDataModel<Dzien>(getDzienManager().getAllDni().toArray(dni));
+        return dniModel = new ArrayDataModel<Dzien>(getDzienManager().getAllDni().toArray(dni));
     }
 }

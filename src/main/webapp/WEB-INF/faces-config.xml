@@ -21,4 +21,12 @@
 		</locale-config>
 
 	</application>
+
+    <navigation-rule>
+        <from-view-id>/addDzien.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/listDzien.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

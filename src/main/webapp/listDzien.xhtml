@@ -11,32 +11,32 @@
         <ui:define name="content">
             <h:form>
                 <h:dataTable styleClass="table table-bordered" value="#{dzienManagerBean.allDni}" var="item">
-                    <f:facet name="header">Dni</f:facet>
+                    <f:facet name="header">#{msg.dni}</f:facet>
                     <h:column>
-                        #{dzienManagerBean.allDni.rowIndex + 1}
+                        #{dzienManagerBean.dniModel.rowIndex + 1}
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Data</f:facet>
+                        <f:facet name="header">#{msg.data}</f:facet>
                         <h:outputText value="#{item.data}">
                             <f:convertDateTime pattern="dd.MM.yyyy" />
                         </h:outputText>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Pogoda</f:facet>
+                        <f:facet name="header">#{msg.pogoda}</f:facet>
                         #{item.pogoda}
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Imieniny</f:facet>
+                        <f:facet name="header">#{msg.imieniny}</f:facet>
                         #{item.imieniny}
                     </h:column>
 
                     <h:column>
-                        <h:commandLink styleClass="btn" value="Usuń dzień"
+                        <h:commandLink styleClass="btn" value="#{msg.usunDzien}"
                                          action="#{dzienBean.removeDzien(item)}"/>
-                        <h:link styleClass="btn" outcome="addDzien?id=#{dzienManagerBean.allDni.rowIndex}"
-                                includeViewParams="true" value="Edytuj dzień" />
+                        <h:link styleClass="btn" outcome="addDzien?id=#{dzienManagerBean.dniModel.rowIndex}"
+                                includeViewParams="true" value="#{msg.edytujDzien}" />
                     </h:column>
 
                 </h:dataTable>

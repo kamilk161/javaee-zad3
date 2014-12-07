@@ -15,24 +15,26 @@
                         type="date"
                         id="date"
                         name="date"
-                        labelText="Data"
-                        placeholder="Podaj datę"
+                        labelText="#{msg.data}"
+                        placeholder="#{msg.podajDate}"
                         value="#{dzienBean.dzien.data}">
-                            <f:convertDateTime pattern="yyyy-M-d" />
+                            <f:convertDateTime pattern="yyyy-MM-d" />
                             <f:validator validatorId="uniqueValidator" />
                             <f:attribute name="dzienBean" value="#{dzienBean}"/>
+                            <f:ajax listener="#{dzienBean.listener}" render="imieniny" />
 
                 </bt:formControl>
                 <bt:select id="pogoda" value="#{dzienBean.dzien.pogoda}" labelText="Pogoda">
                     <f:selectItem itemLabel="Słoneczna" itemValue="SLONECZNA"/>
                     <f:selectItem itemLabel="Deszczowa" itemValue="DESZCZOWA"/>
+                    <f:converter converterId="com.example.jsfdemo.web.PogodaConverter"/>
                 </bt:select>
                 <bt:formControl
                         type="text"
                         id="imieniny"
                         name="imieniny"
-                        labelText="Imieniny"
-                        placeholder="Kto obchodzi imieniny tego dnia?"
+                        labelText="#{msg.imieniny}"
+                        placeholder="#{msg.ktoObchodzi}"
                         value="#{dzienBean.dzien.imieniny}"/>
                 <h:panelGrid>
                     <h:messages showDetail="#{true}"
